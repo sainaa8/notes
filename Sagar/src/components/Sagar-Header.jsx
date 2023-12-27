@@ -36,7 +36,8 @@ export const Header = ({ children }) => {
       <div className={`${open} md:${!open} `}>
         {open && (
           <div className="text-slate-500 mx-auto px-5 mt-10 mb-20 text-[30px]">
-            <div className="flex-col gap-6 border-b-4 border-t-4 border-gray-200">
+            
+            <div className="flex-col flex scroll-py-[16px] gap-6 border-b-4 border-t-4 border-gray-200">
               {routes.map((route, index) => (
                 <p key={index}>{route}</p>
               ))}
