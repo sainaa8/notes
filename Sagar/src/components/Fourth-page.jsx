@@ -5,35 +5,37 @@ const Upwork = (props) => {
   const { header, date } = props;
   return (
     <div className="flex bg-white rounded-lg shadow-2xl justify-center pb-24 pt-16">
-      <div className="flex  gap-[90px] flex-col md:flex-row">
+      <div className="flex  gap-[5px] md:gap-[90px] flex-col md:flex-row">
         <div>
           <Image src="/up.png" width={102} height={28} />
         </div>
-        <div className="w-[384px] h-[224px] text-xl">
+        <div className=" text-xl">
           <h1>
             <strong>{header}</strong>
           </h1>
           <br />
-          <div className="flex flex-col gap-2 text-gray-600">
-            <p className="flex">
-              <GoDotFill />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </p>
-            <p className="flex">
-              <GoDotFill />
-              Ut pretium arcu et massa semper, id fringilla leo semper.
-            </p>
-            <p className="flex">
-              <GoDotFill />
-              Sed quis justo ac magna.
-            </p>
-            <p className="flex">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+          <div className="flex flex-col-reverse md:flex-row  gap-[80px]  text-gray-600">
+            <div className="flex flex-col gap-2 w-[384px] h-[224px]">
+              <p className="flex">
+                <GoDotFill />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </p>
+              <p className="flex ">
+                <GoDotFill />
+                Ut pretium arcu et massa semper, id fringilla leo semper.
+              </p>
+              <p className="flex">
+                <GoDotFill />
+                Sed quis justo ac magna.
+              </p>
+              <p className="flex">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div className="mt-[-1px] md:mt-[-50px]">
+              <p>{date}</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>{date}</p>
         </div>
       </div>
     </div>
