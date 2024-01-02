@@ -64,11 +64,13 @@ const Text = () => {
       {mockData.map(({ description, projectImage, stacks, title }, index) => (
         <div
           key={index}
-          className={`flex items-center rounded-lg shadow-2xl flex-col md:flex-row ${
-            index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-          }`}
+          className={`flex items-center rounded-lg shadow-2xl flex-col 
+            ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
+            
+            
+          `}
         >
-          <div className="flex px-[48px] py-[48px] bg-gray-50 ">
+          <div className="flex px-[48px] py-[48px] bg-gray-50 dark:bg-gray-600 ">
             <div className="w-[480px] h-[384px] relative flex ">
               <Image
                 className="rounded-lg "
@@ -79,17 +81,17 @@ const Text = () => {
             </div>
           </div>
           <div>
-            <div className="flex flex-col px-[48px] py-[48px] gap-[30px] w-[576px] h-[480px] ">
+            <div className="flex flex-col px-[48px] py-[48px] gap-[30px] w-[576px] h-[480px] dark:bg-gray-800">
               <h3 className="text-[20px]">{title}</h3>
               <p className="text-[16px] text-gray-400">{description}</p>
               <div className="w-[480px] h-[100px] flex flex-wrap gap-x-[19px] gap-y-[10px] ">
                 {stacks.map((stack, idx) => (
-                  <p
-                    className="px-[20px] py-[3px] flex bg-slate-300 rounded-lg"
+                  <div
+                    className="px-[20px] py-[3px] flex bg-slate-300 dark:bg-gray-600 rounded-lg"
                     key={idx}
                   >
                     {stack}
-                  </p>
+                  </div>
                 ))}
               </div>
               <PiUploadSimpleBold className="text-[30px]" />

@@ -7,7 +7,7 @@ import { FiFigma } from "react-icons/fi";
 
 const First_header = () => {
   return (
-    <div className="mx-auto flex flex-col-reverse md:flex-row items-center md:items-start max-w-screen-xl mt-12 ">
+    <div className="mx-auto flex flex-col-reverse md:flex-row items-center md:items-start max-w-screen-xl mt-12 pt-[50px] ">
       <div className="px-20 py-4">
         <div>
           <strong className="text-7xl">Hi I'm Vegeta &#128075;</strong>
@@ -15,13 +15,13 @@ const First_header = () => {
         <br />
         <br />
         <div className="text-gray-400">
-          <p>
+          <div>
             I'm a full stack developer (React.js & Node.js) with a focus on
             creating (and occasionally designing) <br /> exceptional digital
             experiences that are fast, accessible, visually appealing, and
             responsive. Even <br /> though I have been creating web applications
             for over 7 years, I still love it as if it was something new.
-          </p>
+          </div>
         </div>
         <div className="mt-10 text-gray-400">
           <div className="flex items-center gap-2">
@@ -40,7 +40,7 @@ const First_header = () => {
         </div>
       </div>
       <div className="relative  z-10 ">
-        <div className="w-64 md:w-72 h-72 md:h-80 bg-gray-300" />
+        <div className="w-64 md:w-72 h-72 md:h-80 bg-gray-300 dark:bg-gray-600" />
         <div className="absolute -top-5 md:-top-10 left-1/2 md:-left-10 -translate-x-1/2 md:translate-x-0">
           <div className=" w-60 md:w-72 h-72 md:h-80">
             <Image

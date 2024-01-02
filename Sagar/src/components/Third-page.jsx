@@ -2,7 +2,7 @@ import Image from "next/image";
 const ProgramLanguages = (props) => {
   const { imgsrc, text } = props;
   return (
-    <div className="flex h-[100px]  flex-col  items-center justify-between ">
+    <div className="flex h-[100px]  flex-col  items-center justify-between dark:bg-black ">
       <Image src={imgsrc} width={64} height={64} />
       <p>{text}</p>
     </div>
@@ -34,7 +34,7 @@ const ThirdPage = () => {
     <div className="mx-auto px-20 py-auto pt-24 pb-[250px] md:pb-16 ">
       <div className="flex flex-col gap-[48px] items-center">
         <div className="mx-auto flex flex-col items-center gap-[16px] justify-center">
-          <div className="w-[75px] h-[28px] bg-slate-300 rounded-lg flex justify-center">
+          <div className="w-[75px] h-[28px] bg-slate-300 dark:bg-gray-500 rounded-lg flex justify-center">
             Skills
           </div>
           <div>The skills, tools and technologies I am really good at:</div>
