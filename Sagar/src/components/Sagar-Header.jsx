@@ -19,8 +19,8 @@ export const Header = ({ children }) => {
   const routes = ["About", "Work", "Testioials", "Contact"];
 
   return (
-    <div className="mx-auto mt-7 max-w-screen-xl ">
-      <div className="fixed top-0 inset-x-[5px] md:inset-x-[250px] z-30 px-20 py-4 flex justify-between items-center  shadow-2xl rounded-lg ">
+    <div className="mx-auto mt-7 max-w-screen-xl">
+      <div className="sticky top-0 z-30 px-4 py-4 flex justify-between items-center  shadow-2xl rounded-lg ">
         <h2 className="text-[40px]">
           <strong>{"<SS />"}</strong>
         </h2>
@@ -34,9 +34,9 @@ export const Header = ({ children }) => {
           <div className="  w-[200px] flex justify-end gap-4 items-center">
             <div onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               {theme === "dark" ? (
-                <IoSunnyOutline className="text-3xl font-extrabold hover:text-yellow-400 active:text-4xl" />
+                <IoSunnyOutline className="text-3xl font-extrabold hover:text-yellow-400 active:text-4xl cursor-pointer" />
               ) : (
-                <CiCloudMoon className="text-3xl hover:text-blue-700 active:text-4xl" />
+                <CiCloudMoon className="text-3xl hover:text-blue-700 active:text-4xl cursor-pointer" />
               )}
             </div>
 
@@ -46,7 +46,15 @@ export const Header = ({ children }) => {
           </div>
         </div>
         <div className="block md:hidden text-4xl " onClick={HandleClick}>
-          {onMenu ? <IoClose /> : <IoMenu />}
+          {onMenu ? (
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.6 }}>
+              <IoClose />
+            </motion.div>
+          ) : (
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.6 }}>
+              <IoMenu />
+            </motion.div>
+          )}
         </div>
       </div>
       <div>
@@ -54,7 +62,7 @@ export const Header = ({ children }) => {
           <AnimatePresence>
             {onMenu && (
               <motion.div
-                initial={{ scale: 0, x: 15, rotate: 0 }}
+                initial={{ scale: 0, x: 0, rotate: 0 }}
                 animate={{ scale: 1, transition: { duration: 1 } }}
                 exit={{ scale: 0, transition: { duration: 1 } }}
               >
@@ -75,9 +83,9 @@ export const Header = ({ children }) => {
                         }
                       >
                         {theme === "dark" ? (
-                          <IoSunnyOutline className="text-2xl" />
+                          <IoSunnyOutline className="text-3xl font-extrabold hover:text-yellow-400 active:text-4xl" />
                         ) : (
-                          <CiCloudMoon className="text-2xl" />
+                          <CiCloudMoon className="text-3xl hover:text-blue-700 active:text-4xl" />
                         )}
                       </div>
                     </div>

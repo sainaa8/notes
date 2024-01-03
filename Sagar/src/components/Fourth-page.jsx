@@ -1,13 +1,17 @@
 import { GoDotFill } from "react-icons/go";
+import { motion } from "framer";
 
 import Image from "next/image";
 const Upwork = (props) => {
   const { header, date } = props;
   return (
-    <div className="flex bg-white dark:bg-gray-500 rounded-lg shadow-2xl justify-center pb-24 pt-16">
+    <motion.div
+      className="flex bg-white dark:bg-gray-500 rounded-lg shadow-2xl justify-center pb-24 pt-16 "
+      whileHover={{ scale: 1.1 }}
+    >
       <div className="flex  gap-[5px] md:gap-[90px] flex-col md:flex-row">
         <div>
-          <Image src="/up.png" width={102} height={28} />
+          <Image src="/logo.svg" width={102} height={28} />
         </div>
         <div className=" text-xl">
           <h1>
@@ -38,7 +42,7 @@ const Upwork = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export const FourtPage = () => {

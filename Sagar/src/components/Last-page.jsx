@@ -4,8 +4,22 @@ import { BsTelephone } from "react-icons/bs";
 import { RiGithubLine } from "react-icons/ri";
 import { FiTwitter } from "react-icons/fi";
 import { FiFigma } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from "react";
 
 const Address = () => {
+  const [copy, setCopy] = useState(false);
+  const OnCopy = () => {
+    setCopy((copy) => !copy);
+  };
+  let timeout;
+  function setFunc() {
+    timeout = setTimeout(backFunc, 2000);
+  }
+  function backFunc() {
+    setCopy((copy) => !copy);
+  }
   return (
     <div className="mx-auto px-20 py-[96px] gap-[48px] flex flex-col items-center ">
       <div className="flex gap-[16px] flex-col items-center">
@@ -21,10 +35,22 @@ const Address = () => {
         <div className="flex gap-[20px] text-[36px] items-center">
           <HiOutlineMail />
           <strong>reachsagarshah@gmail.com</strong>
-          <RxCopy />
+          <CopyToClipboard text="reachsagarshah@gmail.com" onCopy={OnCopy}>
+            <RxCopy
+              onClick={setFunc}
+              className="hover:scale-125 active:scale-100 ease-in cursor-pointer"
+            />
+          </CopyToClipboard>
         </div>
+
         <div className="flex gap-[20px] text-[36px] items-center">
-          <BsTelephone /> <strong>+91 8980500565</strong> <RxCopy />
+          <BsTelephone /> <strong>+91 8980500565</strong>
+          <CopyToClipboard text="+91 8980500565" onCopy={OnCopy}>
+            <RxCopy
+              onClick={setFunc}
+              className="hover:scale-125 active:scale-100 ease-in-out cursor-pointer"
+            />
+          </CopyToClipboard>
         </div>
       </div>
       <div className="flex flex-col items-center">
@@ -36,6 +62,20 @@ const Address = () => {
           <FiTwitter />
           <FiFigma />
         </div>
+      </div>
+      <div>
+        <AnimatePresence>
+          {copy && (
+            <motion.div
+              className="fixed bottom-[90px]  right-[48%] px-[20px] py-[5px] rounded-lg text-2xl text-bolder text-white bg-black dark:bg-white dark:text-black"
+              initial={{ scale: 0, x: 0, rotate: 0 }}
+              animate={{ scale: 1, transition: { duration: 1 } }}
+              exit={{ scale: 0, transition: { duration: 1 } }}
+            >
+              Copied!
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

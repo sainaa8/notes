@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { PiUploadSimpleBold } from "react-icons/pi";
+import { motion } from "framer";
 
 const mockData = [
   {
@@ -62,7 +63,8 @@ const Text = () => {
   return (
     <div className="mx-auto  flex flex-col items-center gap-[48px]">
       {mockData.map(({ description, projectImage, stacks, title }, index) => (
-        <div
+        <motion.div
+          whileHover={{ scale: 1.1 }}
           key={index}
           className={`flex items-center rounded-lg shadow-2xl flex-col 
             ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
@@ -97,7 +99,7 @@ const Text = () => {
               <PiUploadSimpleBold className="text-[30px]" />
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
