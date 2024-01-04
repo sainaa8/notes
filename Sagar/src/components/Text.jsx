@@ -61,19 +61,19 @@ const mockData = [
 ];
 const Text = () => {
   return (
-    <div className="mx-auto  flex flex-col items-center gap-[48px]">
+    <div className="mx-auto w-[full] flex flex-col items-center drak:rounded-lg gap-[48px]">
       {mockData.map(({ description, projectImage, stacks, title }, index) => (
         <motion.div
           whileHover={{ scale: 1.1 }}
           key={index}
-          className={`flex items-center rounded-lg shadow-2xl flex-col 
+          className={`flex items-center rounded-lg dark:rounded-lg shadow-2xl  flex-col 
             ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
             
             
           `}
         >
-          <div className="flex px-[48px] py-[48px] bg-gray-50 dark:bg-gray-600 ">
-            <div className="w-[480px] h-[384px] relative flex ">
+          <div className="flex w-[100%] px-[1px] md:px-[48px] py-[8px] md:py-[48px] dark:bg-gray-600 ">
+            <div className="w-[100%] md:w-[480px] h-[256px] md:h-[384px] relative flex ">
               <Image
                 className="rounded-lg "
                 src={projectImage}
@@ -83,10 +83,10 @@ const Text = () => {
             </div>
           </div>
           <div>
-            <div className="flex flex-col px-[48px] py-[48px] gap-[30px] w-[576px] h-[480px] dark:bg-gray-800">
+            <div className="flex flex-col px-[48px] py-[48px] gap-[30px] w-[343px] md:w-[576px] h-[480px] dark:bg-gray-800">
               <h3 className="text-[20px]">{title}</h3>
               <p className="text-[16px] text-gray-400">{description}</p>
-              <div className="w-[480px] h-[100px] flex flex-wrap gap-x-[19px] gap-y-[10px] ">
+              <div className="w-[279px] md:w-[480px] h-[100px] flex flex-wrap gap-x-[19px] gap-y-[10px] ">
                 {stacks.map((stack, idx) => (
                   <div
                     className="px-[20px] py-[3px] flex bg-slate-300 dark:bg-gray-600 rounded-lg"

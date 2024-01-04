@@ -2,8 +2,11 @@ import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 const SecondPage = () => {
   return (
-    <div className="mx-auto px-20 py-4 mt-20 pb-20 bg-slate-50 dark:bg-gray-700 flex-col">
-      <div className="mx-auto flex justify-center mt-[64px] md:mt-[96px]">
+    <div
+      id="aboutMe"
+      className="mx-auto px-[8px] md:px-20 py-4 mt-20 pb-20 bg-slate-50 dark:bg-gray-700 flex-col"
+    >
+      <div className="mx-auto  flex justify-center mt-[64px] md:mt-[96px]">
         <div className="bg-slate-300 dark:bg-gray-500 w-[100px] h-[30px] rounded-lg flex justify-center">
           About me
         </div>

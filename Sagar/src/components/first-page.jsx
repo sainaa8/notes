@@ -8,7 +8,7 @@ import { FiFigma } from "react-icons/fi";
 const First_header = () => {
   return (
     <div className="mx-auto flex flex-col-reverse md:flex-row items-center md:items-start max-w-screen-xl mt-12 pt-[50px] ">
-      <div className="px-20 py-4">
+      <div className="px-[8px] md:px-20 py-4">
         <div>
           <strong className="text-7xl">Hi I'm Vegeta &#128075;</strong>
         </div>
@@ -34,9 +34,20 @@ const First_header = () => {
           </div>
         </div>
         <div className="flex text-[40px] gap-4 mt-10 ">
-          <RiGithubLine />
-          <FiTwitter />
-          <FiFigma />
+          <a
+            href="https://github.com
+            "
+            rel="no-referrer"
+            target="_blank"
+          >
+            <RiGithubLine />
+          </a>
+          <a href="https://twitter.com" rel="no-referrer" target="_blank">
+            <FiTwitter />
+          </a>
+          <a href="https://www.figma.com" rel="no-referrer" target="_blank">
+            <FiFigma />
+          </a>
         </div>
       </div>
       <div className="relative  z-10 ">

@@ -12,11 +12,22 @@ export const Header = ({ children }) => {
   const { theme, setTheme } = useTheme();
   console.log(theme);
 
-  const [open, setOpen] = useState(false);
-  const Click = () => {
-    setOpen(!open);
+
+  const routes = [
+    { sectionID: "aboutMe", label: "About" },
+    { sectionID: "work", label: "Work" },
+    { sectionID: "testimonials", label: "Testimonials" },
+    { sectionID: "contact", label: "Contact" },
+  ];
+
+  const scrollToSection = (element_id) => {
+    const element = document.getElementById(element_id);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   };
-  const routes = ["About", "Work", "Testioials", "Contact"];
 
   return (
     <div className="mx-auto mt-7 max-w-screen-xl">
@@ -27,8 +38,15 @@ export const Header = ({ children }) => {
 
         <div className="hidden md:flex  divide-x-2 gap-6">
           <div className="flex gap-6">
-            {routes.map((route, index) => (
-              <div key={index}>{route}</div>
+            {routes.map(({ label, sectionID }, index) => (
+              <p
+                style={{ cursor: "pointer" }}
+                id={index}
+                key={index}
+                onClick={() => scrollToSection(sectionID)}
+              >
+                {label}
+              </p>
             ))}
           </div>
           <div className="  w-[200px] flex justify-end gap-4 items-center">
