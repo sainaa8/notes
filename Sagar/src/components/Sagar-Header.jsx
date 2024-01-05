@@ -8,10 +8,10 @@ import { motion, AnimatePresence } from "framer";
 
 export const Header = ({ children }) => {
   const [onMenu, setOnMenu] = useState(false);
-  const HandleClick = () => setOnMenu((prev) => !prev);
+  const handleClick = () => setOnMenu((prev) => !prev);
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
+  // const routes = ["about", "work", "testimoials", "contact"];
 
   const routes = [
     { sectionID: "aboutMe", label: "About" },
@@ -38,6 +38,9 @@ export const Header = ({ children }) => {
 
         <div className="hidden md:flex  divide-x-2 gap-6">
           <div className="flex gap-6">
+            {/* {routes.map((el, i) => {
+              return <div key={i}>{el.label} </div>;
+            })} */}
             {routes.map(({ label, sectionID }, index) => (
               <p
                 style={{ cursor: "pointer" }}
@@ -63,7 +66,7 @@ export const Header = ({ children }) => {
             </button>
           </div>
         </div>
-        <div className="block md:hidden text-4xl " onClick={HandleClick}>
+        <div className="block md:hidden text-4xl " onClick={handleClick}>
           {onMenu ? (
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.6 }}>
               <IoClose />
@@ -87,7 +90,7 @@ export const Header = ({ children }) => {
                 <div className="block md:hidden text-black  pb-[20px] dark:text-white mx-auto px-5 mt-10 mb-20 text-[30px]  rounded-lg shadow-2xl ">
                   <div className="flex-col flex scroll-py-[16px] gap-6 border-b-4 border-t-4 border-gray-200">
                     {routes.map((route, index) => (
-                      <div key={index}>{route}</div>
+                      <div key={index}>{route.label}</div>
                     ))}
                   </div>
                   <br />

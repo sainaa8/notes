@@ -47,11 +47,12 @@ const Address = () => {
       <div className="flex flex-col items-center gap-[16px]">
         <div className="flex gap-[20px] text-[10] md:text-[36px] items-center">
           <a
-            href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzDQzCDDCMRPjbmVczfsJmLtQLfFTLNDsZWBsrbSnhZbpqlXCWkWXPzrTGLBtfTghRDNqrM"
+            href="https://mail.google.com/mail/u/0/#inbox/FMfcgzGwJSJDtZmDFRwjLRTrGPcqlTTk?compose=FZxzwjpcRPBTWHcgJpdTsQptdFQbTTJqtCJxkVMlfldDSPdRVMCcRBSFtxdlLcsqcCqGKnMRFMmDwHztRDBShqRQMjBpzclDhQHJTtnQjfjJjQkPVxsNtqXFzMVTvwKLWzvbvNzsRJfBjmzCQvQmjPLTWtWpSBKRLJJQB"
+            // href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzDQzCDDCMRPjbmVczfsJmLtQLfFTLNDsZWBsrbSnhZbpqlXCWkWXPzrTGLBtfTghRDNqrM"
             rel="no-referrer"
             target="_blank"
           >
-            <HiOutlineMail />
+            <HiOutlineMail className="hover:scale-125 active:scale-100 ease-in cursor-pointer" />
           </a>
 
           <strong>reachsagarshah@gmail.com</strong>
@@ -87,7 +88,7 @@ const Address = () => {
         <AnimatePresence>
           {copy && (
             <motion.div
-              className="fixed bottom-[300px] md:bottom-[90px]  right-[2.5%] md:right-[44%] px-[20px] py-[5px] rounded-lg text-lg  md:text-2xl text-bolder text-white bg-black dark:bg-white dark:text-black"
+              className="fixed bottom-[300px] md:bottom-[90px]  right-[2.5%] md:right-[40%] px-[20px] py-[5px] rounded-lg text-lg  md:text-2xl text-bolder text-white bg-black dark:bg-white dark:text-black"
               initial={{ bottom: "-100%" }}
               animate={{ bottom: "10%", transition: { duration: 1 } }}
               exit={{ scale: 0, transition: { duration: 1 } }}
@@ -101,10 +102,10 @@ const Address = () => {
         <AnimatePresence>
           {numCopy && (
             <motion.div
-              className="fixed bottom-[300px] md:bottom-[90px]  right-[16%] md:right-[44%] px-[20px] py-[5px] rounded-lg text-lg  md:text-2xl text-bolder text-white bg-black dark:bg-white dark:text-black"
+              className="fixed bottom-[300px] md:bottom-[90px]  right-[16%] md:right-[40%] px-[20px] py-[5px] rounded-lg text-lg  md:text-2xl text-bolder text-white bg-black dark:bg-white dark:text-black"
               initial={{ bottom: "-100%", x: 0, rotate: 0 }}
               animate={{ bottom: "10%", transition: { duration: 1 } }}
-              exit={{ scale: 0, transition: { duration: 1 } }}
+              exit={{ bottom: "-100%", transition: { duration: 5 } }}
             >
               Copied! "+91 8980500565"
             </motion.div>
