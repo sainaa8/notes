@@ -5,6 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import { CiCloudMoon } from "react-icons/ci";
 import { motion, AnimatePresence } from "framer";
+import Bomb from "@/components/bomb";
 
 export const Header = ({ children }) => {
   const [onMenu, setOnMenu] = useState(false);
@@ -35,7 +36,8 @@ export const Header = ({ children }) => {
         <h2 className="text-[40px]">
           <strong>{"<SS />"}</strong>
         </h2>
-
+        <Bomb />
+        
         <div className="hidden md:flex  divide-x-2 gap-6">
           <div className="flex gap-6">
             {/* {routes.map((el, i) => {

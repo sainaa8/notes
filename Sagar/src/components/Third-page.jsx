@@ -3,7 +3,13 @@ const ProgramLanguages = (props) => {
   const { imgsrc, text } = props;
   return (
     <div className="flex h-[100px]  flex-col  items-center justify-between dark:bg-black ml-[14px] md:ml-[50px]">
-      <Image src={imgsrc} layout="resfonsive" width={64} height={64} />
+      <Image
+        src={imgsrc}
+        layout="resfonsive"
+        width={64}
+        height={64}
+        className="invert: [50%] dark:invert"
+      />
       <p>{text}</p>
     </div>
   );
